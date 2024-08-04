@@ -100,17 +100,6 @@ class _AwesomeFilterWidgetState extends State<AwesomeFilterWidget> {
                 },
               ),
             ),
-            Positioned(
-              bottom:
-                  widget.filterListPosition == FilterListPosition.belowButton
-                      ? 0
-                      : null,
-              top: widget.filterListPosition == FilterListPosition.belowButton
-                  ? null
-                  : 0,
-              right: 20,
-              child: AwesomeFilterButton(state: widget.state),
-            ),
           ],
         ),
       ),
