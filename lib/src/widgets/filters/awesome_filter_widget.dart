@@ -114,32 +114,6 @@ class _AwesomeFilterWidgetState extends State<AwesomeFilterWidget> {
           ],
         ),
       ),
-      if (widget.spacer != null) widget.spacer!,
-      if (widget.state is PhotoCameraState)
-        StreamBuilder<bool>(
-          stream: widget.state.filterSelectorOpened$,
-          builder: (_, snapshot) {
-            return AnimatedClipRect(
-              open: snapshot.data == true,
-              horizontalAnimation: false,
-              verticalAnimation: true,
-              alignment:
-                  widget.filterListPosition == FilterListPosition.belowButton
-                      ? Alignment.topCenter
-                      : Alignment.bottomCenter,
-              duration: widget.animationDuration,
-              curve: widget.animationCurve,
-              reverseCurve: widget.animationCurve.flipped,
-              child: AwesomeFilterSelector(
-                state: widget.state as PhotoCameraState,
-                filterListPosition: widget.filterListPosition,
-                indicator: widget.indicator,
-                filterListBackgroundColor: theme.bottomActionsBackgroundColor,
-                filterListPadding: widget.filterListPadding,
-              ),
-            );
-          },
-        ),
     ];
     return Column(
       children: widget.filterListPosition == FilterListPosition.belowButton
